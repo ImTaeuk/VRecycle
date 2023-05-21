@@ -10,7 +10,7 @@ using UnityEngine;
 public abstract class InteractableObject : MonoBehaviour
 {
     protected Animator anim;
-    [SerializeField] protected AudioSource sound;
+    protected AudioSource sound;
 
     protected bool isAnimPlaying = false;
 
