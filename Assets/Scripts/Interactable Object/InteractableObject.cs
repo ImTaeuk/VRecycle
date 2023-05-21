@@ -9,16 +9,29 @@ using UnityEngine;
 /// 
 public abstract class InteractableObject : MonoBehaviour
 {
-    Animator anim;
-    ControllerManager manager;
-    public void SetControllerManager(ControllerManager m) { manager = m; } 
+    protected Animator anim;
+    [SerializeField] protected AudioSource sound;
+
+    protected bool isAnimPlaying = false;
+
+    protected ControllerManager manager;
+    public void SetControllerManager(ControllerManager m) 
+    {
+        manager = m;
+    } 
 
 
     public virtual void Awake()
     {
         anim= GetComponent<Animator>();
+        sound = GetComponent<AudioSource>();
         manager = null;
     }
 
     public abstract void OnActiveInteraction();
+
+    public void OnEndOfAnim()
+    {
+        isAnimPlaying= false;
+    }
 }

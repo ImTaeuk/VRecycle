@@ -9,7 +9,8 @@ public class ControllerManager : MonoBehaviour
     public Animator handAnimator;
 
     [SerializeField] private bool isGrabbing;
-    [SerializeField] private bool isTriggerActivating;
+    [SerializeField] private bool isTriggerActivated;
+    public bool IsTriggerActivated => isTriggerActivated;
 
     private XRGrabInteractable grabbingObj;
     public XRGrabInteractable GetGrabbingObject => grabbingObj;
@@ -21,6 +22,8 @@ public class ControllerManager : MonoBehaviour
 
     Collider[] grabCols;
     Collider[] interactCols;
+
+    [SerializeField] bool drawSphere = false;
 
     private void Awake()
     {
@@ -41,17 +44,21 @@ public class ControllerManager : MonoBehaviour
 
         UpdateGrbbingObject();
         UpdateInteractObject();
+
+        UpdateInteractableObjectState();
     }
 
 
     void UpdateInputTriggers()
     {
         isGrabbing = (gripAnimationAction.action.ReadValue<float>() == 0 ? false : true);
-        isTriggerActivating = (pinchAnimationAction.action.ReadValue<float>() == 0 ? false : true);
+        isTriggerActivated = (pinchAnimationAction.action.ReadValue<float>() == 0 ? false : true);
     }
 
     private void OnDrawGizmos()
     {
+        if (!drawSphere) return;
+
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(transform.position, radius);
     }
@@ -62,9 +69,16 @@ public class ControllerManager : MonoBehaviour
 
         if (!isGrabbing || grabCols.Length == 0)
         {
+            InteractableObject obj = null;
+
+            if (grabbingObj != null && grabbingObj.TryGetComponent<InteractableObject>(out obj))
+                obj.SetControllerManager(null);
+
             grabbingObj = null;
+
             return;
         }
+        
 
         grabbingObj = grabCols[0].GetComponent<XRGrabInteractable>();
     }
@@ -73,8 +87,13 @@ public class ControllerManager : MonoBehaviour
     {
         interactCols = Physics.OverlapSphere(transform.position, radius, LayerMask.GetMask("Interactable"));
 
-        if (!isTriggerActivating || interactCols.Length == 0)
+        if (!isTriggerActivated || interactCols.Length == 0)
         {
+            InteractableObject obj = null;
+
+            if (interactingObj != null && interactingObj.TryGetComponent<InteractableObject>(out obj))
+                obj.SetControllerManager(null);
+
             interactingObj = null;
             return;
         }
@@ -88,7 +107,7 @@ public class ControllerManager : MonoBehaviour
         InteractableObject obj;
 
         //Grab Object에 대해
-        if (grabbingObj.TryGetComponent<InteractableObject>(out obj) && grabbingObj)
+        if (grabbingObj != null && grabbingObj.TryGetComponent<InteractableObject>(out obj) && grabbingObj)
         {
             obj.SetControllerManager(this);
 
@@ -98,7 +117,7 @@ public class ControllerManager : MonoBehaviour
         }
 
         //Interact Object 에 대해
-        if (interactingObj.TryGetComponent<InteractableObject>(out obj) && isTriggerActivating)
+        if (interactingObj != null && interactingObj.TryGetComponent<InteractableObject>(out obj) && isTriggerActivated)
         {
             obj.SetControllerManager(this);
 
