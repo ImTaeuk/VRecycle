@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     ScriptManager scriptManager;
     public ScriptManager ScriptManager => scriptManager;
     
-    InputManager inputManager;
-    public InputManager InputManager => inputManager;
+    ControllerManager inputManager;
+    public ControllerManager InputManager => inputManager;
 
     UIManager uiManager;
     public UIManager UIManager => uiManager;
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         soundController = GetComponent<SoundController>();
         effectManager = GetComponent<EffectManager>();
         player = GetComponent<PlayerController>();
-        InputManager inputManager = GetComponent<InputManager>();
+        ControllerManager inputManager = GetComponent<ControllerManager>();
 
         #endregion
 
