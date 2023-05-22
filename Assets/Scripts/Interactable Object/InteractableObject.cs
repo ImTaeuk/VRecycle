@@ -13,15 +13,18 @@ public abstract class InteractableObject : MonoBehaviour
     protected AudioSource sound;
 
     protected bool isAnimPlaying = false;
+    public bool IsAnimPlaying => isAnimPlaying;
 
     protected ControllerManager manager;
+    public ControllerManager getManager;
+
     public void SetControllerManager(ControllerManager m) 
     {
         manager = m;
     } 
 
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         anim= GetComponent<Animator>();
         sound = GetComponent<AudioSource>();

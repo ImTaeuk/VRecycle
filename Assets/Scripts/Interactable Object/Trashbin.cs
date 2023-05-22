@@ -41,4 +41,15 @@ public class Trashbin : InteractableObject
 
         //anim.SetTrigger("activeTrigger");
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Trash trash;
+        if (collision.transform.TryGetComponent<Trash>(out trash))
+        {
+            // trash type에 따라 점수 부여
+            trash.gameObject.SetActive(false);
+        }
+    }
+
 }
