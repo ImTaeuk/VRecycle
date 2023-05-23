@@ -12,9 +12,6 @@ public class GameManager : MonoBehaviour
 
     ScriptManager scriptManager;
     public ScriptManager ScriptManager => scriptManager;
-    
-    ControllerManager inputManager;
-    public ControllerManager InputManager => inputManager;
 
     UIManager uiManager;
     public UIManager UIManager => uiManager;
@@ -22,19 +19,13 @@ public class GameManager : MonoBehaviour
     SoundController soundController;
     public SoundController SoundController => soundController;
 
-    EffectManager effectManager;
-    public EffectManager EffectManager => effectManager;
-
-    PlayerController player;
-    public PlayerController Player => player;
-
 
     private void Awake()
     {
         // Singleton Pattern -> Only one GameManager
+        instance = this;
         Assert.IsNotNull(instance);
 
-        instance = this;
 
         #region Initalize Components
 
@@ -42,9 +33,6 @@ public class GameManager : MonoBehaviour
         scriptManager = GetComponent<ScriptManager>();
         uiManager = GetComponent<UIManager>();
         soundController = GetComponent<SoundController>();
-        effectManager = GetComponent<EffectManager>();
-        player = GetComponent<PlayerController>();
-        ControllerManager inputManager = GetComponent<ControllerManager>();
 
         #endregion
 

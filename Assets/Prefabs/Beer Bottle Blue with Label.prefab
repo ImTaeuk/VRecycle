@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getManager: {fileID: 0}
-  type: 0
+  type: 4
   labelMaterial: {fileID: 2100000, guid: ab2210269040f5144b25ed20f86878f9, type: 2}
   speed: 2
 --- !u!114 &7157150053358764797

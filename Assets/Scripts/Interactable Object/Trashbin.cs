@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Trashbin : InteractableObject
 {
+    [SerializeField] private TrashType trashType;
+
     private bool isPlayerAttached = false;
 
     [SerializeField] bool drawGizmos = false;
@@ -47,6 +49,12 @@ public class Trashbin : InteractableObject
         Trash trash;
         if (collision.transform.TryGetComponent<Trash>(out trash))
         {
+            if (trash.GetTrashType() == trashType)
+            {
+                GameManager.instance.SoundController.PlaySuccessSound();
+            }
+            else GameManager.instance.SoundController.PlayFailureSound();
+
             // trash type에 따라 점수 부여
             trash.gameObject.SetActive(false);
         }

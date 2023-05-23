@@ -31,7 +31,7 @@ public class Bottle : Trash
     private void Update()
     {
         OnActiveInteraction();
-        if (isShaderChanged && (cutted || scissor.IsAnimPlaying) && transform.GetChild(0).gameObject.activeSelf)
+        if (isShaderChanged && (cutted || (scissor != null && scissor.IsAnimPlaying)) && transform.GetChild(0).gameObject.activeSelf)
         {
             cutted = true;
             Debug.Log(labelMaterial.GetFloat("_Val"));

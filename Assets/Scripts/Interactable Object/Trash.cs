@@ -16,4 +16,5 @@ public abstract class Trash : InteractableObject
     protected bool isCleard = false;
 
     [SerializeField] protected TrashType type;
+    public TrashType GetTrashType() { return type; }
 }

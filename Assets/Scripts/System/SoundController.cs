@@ -5,6 +5,16 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private List<AudioSource> audioSources;
+    [SerializeField] private AudioSource success;
+    public void PlaySuccessSound()
+    {
+        success.Play();
+    }
+    [SerializeField] private AudioSource failure;
+    public void PlayFailureSound()
+    {
+        failure.Play();
+    }
 
     private void Awake()
     {
