@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379840506910075830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0001, z: -0.0897}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5923999064420744508}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
 --- !u!33 &577603268509765087
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379840506910075830}
-  m_Mesh: {fileID: 7250145507585717665, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
+  m_Mesh: {fileID: 6149214497528960574, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
 --- !u!23 &6727443883206070929
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ab2210269040f5144b25ed20f86878f9, type: 2}
+  - {fileID: 2100000, guid: 3785099b1af7f784094827a70136ef1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7823719839155663470}
   - component: {fileID: 7157150053358764797}
   m_Layer: 0
-  m_Name: Beer Bottle Clear with Label 1
+  m_Name: Wine Bottle with Green Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5482124049528402113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.105, y: 0.975, z: 1.028}
+  m_LocalPosition: {x: -0.105, y: 0.9661, z: 1.028}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,7 +128,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5482124049528402113}
-  m_Mesh: {fileID: 9120247497444705930, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
+  m_Mesh: {fileID: -3800283390603515033, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
 --- !u!23 &4325771164862168440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 201aeac2a3860724e984461d5688701a, type: 2}
+  - {fileID: 2100000, guid: 818f028ce1fee8746983e9269c738c50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,8 +198,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.112412974, y: 0.11241394, z: 0.48414254}
-  m_Center: {x: 0, y: 0.00020496547, z: -0.0026914477}
+  m_Size: {x: 0.08352928, y: 0.3, z: 0.6}
+  m_Center: {x: 0.0002712682, y: 0.01, z: 0.0066955984}
 --- !u!114 &7823719839155663470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getManager: {fileID: 0}
   type: 4
-  labelMaterial: {fileID: 2100000, guid: ab2210269040f5144b25ed20f86878f9, type: 2}
+  labelMaterial: {fileID: 2100000, guid: 3785099b1af7f784094827a70136ef1a, type: 2}
   speed: 2
 --- !u!114 &7157150053358764797
 MonoBehaviour:

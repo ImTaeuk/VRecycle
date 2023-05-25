@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379840506910075830}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.0476, y: 0.0001, z: -0.0897}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379840506910075830}
-  m_Mesh: {fileID: -6524675212004149467, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
+  m_Mesh: {fileID: 6149214497528960574, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
 --- !u!23 &6727443883206070929
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 477af023eafa6ca44a2c37e85c85c4d8, type: 2}
+  - {fileID: 2100000, guid: dea66ddd629e83e4d9a89a20b70a5545, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7823719839155663470}
   - component: {fileID: 7157150053358764797}
   m_Layer: 0
-  m_Name: Vodka Bottle Blue with Label
+  m_Name: Wine Bottle with Red Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5482124049528402113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.105, y: 0.975, z: 1.028}
+  m_LocalPosition: {x: -0.105, y: 0.9661, z: 1.028}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,7 +128,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5482124049528402113}
-  m_Mesh: {fileID: 3454464968237028978, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
+  m_Mesh: {fileID: -3800283390603515033, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
 --- !u!23 &4325771164862168440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -198,8 +198,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.112412974, y: 0.11241394, z: 0.48414254}
-  m_Center: {x: 0, y: 0.00020496547, z: -0.0026914477}
+  m_Size: {x: 0.08352928, y: 0.3, z: 0.6}
+  m_Center: {x: 0.0002712682, y: 0.01, z: 0.0066955984}
 --- !u!114 &7823719839155663470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getManager: {fileID: 0}
   type: 4
-  labelMaterial: {fileID: 2100000, guid: ab2210269040f5144b25ed20f86878f9, type: 2}
+  labelMaterial: {fileID: 2100000, guid: dea66ddd629e83e4d9a89a20b70a5545, type: 2}
   speed: 2
 --- !u!114 &7157150053358764797
 MonoBehaviour:
