@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 9047108041760289194}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 1.896, y: 0, z: 1.058}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3778782998088525073}
@@ -326,6 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c787c4973eb524e8c6345b0cf964a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getManager: {fileID: 0}
+  trashType: 0
   drawGizmos: 1
 --- !u!82 &4778432378244554515
 AudioSource:
