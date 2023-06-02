@@ -1,30 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
-
 public class UI_keyInput : MonoBehaviour
 {
-    public GameObject canvas; // UI 캔버스 게임 오브젝트
-    public XRNode inputSource;
-
-    private bool isGripPressed = false;
+    public GameObject uiObject; // 끄거나 켤 UI 요소
+    public KeyCode toggleKey = KeyCode.B; // B 키로 설정
 
     private void Update()
     {
-        InputDevice device = InputDevices.GetDeviceAtXRNode(inputSource);
-
-        if (device.TryGetFeatureValue(CommonUsages.gripButton, out bool gripValue))
+        // VR 컨트롤러 버튼 입력 감지
+        if (CheckToggleButton())
         {
-            if (gripValue && !isGripPressed)
-            {
-                canvas.SetActive(!canvas.activeSelf); // UI 캔버스를 활성화 또는 비활성화
-                isGripPressed = true;
-            }
-            else if (!gripValue && isGripPressed)
-            {
-                isGripPressed = false;
-            }
+            ToggleUI();
         }
+    }
+
+    private bool CheckToggleButton()
+    {
+        // 키보드 입력 감지
+        if (Input.GetKeyDown(toggleKey))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private void ToggleUI()
+    {
+        // UI 요소 활성화/비활성화 전환
+        uiObject.SetActive(!uiObject.activeSelf);
     }
 }
