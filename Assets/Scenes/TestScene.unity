@@ -2032,12 +2032,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!4 &852414063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5464714680702682041, guid: d0d73c793c281ec418305c66f93b3b53,
     type: 3}
   m_PrefabInstance: {fileID: 4778432377642845407}
   m_PrefabAsset: {fileID: 0}
+>>>>>>> main
 --- !u!1 &941173940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,7 +2541,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
+  m_IsActive: 1
+=======
   m_IsActive: 0
+>>>>>>> main
 --- !u!114 &1692123242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,7 +2773,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 6
+=======
   m_RootOrder: 9
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1803736196
 PrefabInstance:
@@ -3053,6 +3064,8 @@ MonoBehaviour:
     m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   handAnimator: {fileID: 1803736198}
+<<<<<<< HEAD
+=======
   isGrabbing: 0
   isTriggerActivated: 0
   radius: 0.1
@@ -3070,6 +3083,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0.03, z: 0}
+>>>>>>> main
 --- !u!1 &2041894605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,7 +3104,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
+  m_IsActive: 1
+=======
   m_IsActive: 0
+>>>>>>> main
 --- !u!65 &2041894606
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3167,7 +3185,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 5
+=======
   m_RootOrder: 8
+>>>>>>> main
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2041894610
 MonoBehaviour:
@@ -3408,6 +3430,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119058420
@@ -3942,3 +3968,4 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e9b8d41e647d2041a896c3ac7d0f215, type: 3}
+>>>>>>> main
