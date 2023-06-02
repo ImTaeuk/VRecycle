@@ -5,21 +5,28 @@ using UnityEngine;
 public class UI_Active_Manager : MonoBehaviour
 {
 
-    public GameObject obj1;
-    public GameObject obj2;
+    public GameObject[] uiElements;
 
-// Objectname.activeSelf = isActive;
-    public void SetUI(GameObject Click,GameObject Get_Clicked)
+    private AudioSource audioSource;
+
+    void Start()
     {
-        Get_Clicked.SetActive(true);
-        Click.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
-    public void Obj1_TO_Obj2()
+    public void MoveUI(int index)
     {
-        SetUI(obj1, obj2);
-    }
+        foreach (GameObject uiElement in uiElements)
+        {
+            uiElement.SetActive(false);
+        }
 
+        // 해당 인덱스의 UI 켜기
+        uiElements[index].SetActive(true);
+
+        // 사운드 재생
+        audioSource.Play();
+    }
 }
 
 //Any UI
