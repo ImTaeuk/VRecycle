@@ -13,7 +13,8 @@ public enum TrashType
 
 public abstract class Trash : InteractableObject
 {
-    protected bool isCleard = false;
+    protected bool isCleared = false;
+    public bool IsCleared => isCleared;
 
     [SerializeField] protected TrashType type;
     public TrashType GetTrashType() { return type; }

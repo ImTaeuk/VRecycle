@@ -1,5 +1,9 @@
+using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ControllerManager : MonoBehaviour
@@ -25,6 +29,9 @@ public class ControllerManager : MonoBehaviour
 
     [SerializeField] bool drawSphere = false;
 
+    public float btnTimer = 0;
+
+
     private void Awake()
     {
         grabCols = new Collider[1];
@@ -46,8 +53,39 @@ public class ControllerManager : MonoBehaviour
         UpdateInteractObject();
 
         UpdateInteractableObjectState();
+
+        UIRaycastProcess();
+
+        if (btnTimer > 0)
+            btnTimer -= Time.deltaTime;
     }
 
+    void UIRaycastProcess()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        
+        RaycastHit hit;
+        
+        if (GameManager.instance.UIActiveStatus && Physics.Raycast(ray, out hit))
+        {
+            Debug.DrawRay(transform.position, transform.forward, Color.red);
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("UI"))
+            {
+
+                GameManager.instance.dot.transform.position = hit.point;
+                Debug.Log(hit.transform.name);
+                if (isTriggerActivated && btnTimer <= 0)
+                {
+                    Button btn = hit.transform.GetComponent<Button>();
+                    if (btn != null)
+                    {
+                        btnTimer = 0.2f;
+                        btn.onClick.Invoke();
+                    }
+                }
+            }
+        }
+    }
 
     void UpdateInputTriggers()
     {

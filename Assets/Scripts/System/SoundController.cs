@@ -4,6 +4,30 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
+    private void Awake()
+    {
+        ControlVolume(1);
+    }
+
+
+    [SerializeField] AudioSource click;
+    public void PlayClickSound()
+    {
+        click.Play();
+    }
+
+    float volume;
+
+    public void ControlVolume(float val)
+    {
+        volume = val;
+
+        foreach(var itr in audioSources)
+        {
+            itr.volume = volume;
+        }
+    }
+
     [SerializeField] private List<AudioSource> audioSources;
     [SerializeField] private AudioSource success;
     public void PlaySuccessSound()
@@ -16,26 +40,12 @@ public class SoundController : MonoBehaviour
         failure.Play();
     }
 
-    private void Awake()
+    [SerializeField] private AudioSource inGameBGM;
+    public void PlayInGameBGM(bool val)
     {
-        audioSources = new List<AudioSource>();
-    }
-
-    /// <summary>
-    /// audioName => GameConsts.AudioSourceName.이름 형식으로 사용
-    /// </summary>
-    /// <param name="audioName"></param>
-    /// <param name="isLoop"></param>
-    public void PlayAudioSource(string audioName, bool isLoop = false)
-    {
-        foreach (AudioSource itr in audioSources)
-        {
-            itr.Play();
-        }
-    }
-
-    public void StopAudioSource(string audioName)
-    {
-
+        if (val)
+            inGameBGM.Play();
+        else
+            inGameBGM.Stop();
     }
 }

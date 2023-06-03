@@ -25,7 +25,7 @@ namespace GameConsts
 
     public static class SceneName
     {
-        public static readonly string LobbyScene = "LobbyScene";
-        public static readonly string Level1Scene = "Level1Scene";
+        public static readonly string LobbyScene = "Lobby";
+        public static readonly string Level1Scene = "InGame";
     }
 }

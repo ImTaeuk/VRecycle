@@ -49,7 +49,7 @@ public class Trashbin : InteractableObject
         Trash trash;
         if (collision.transform.TryGetComponent<Trash>(out trash))
         {
-            if (trash.GetTrashType() == trashType)
+            if (trash.GetTrashType() == trashType && trash.IsCleared)
             {
                 GameManager.instance.SoundController.PlaySuccessSound();
             }

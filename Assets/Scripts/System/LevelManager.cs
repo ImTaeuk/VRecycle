@@ -5,47 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    Scene curScene;
+    Scene uiScene;
+    Scene inGameScene;
 
     private void Start()
     {
+        uiScene = SceneManager.GetSceneByName(GameConsts.SceneName.LobbyScene);
+        inGameScene = SceneManager.GetSceneByName(GameConsts.SceneName.Level1Scene);
     }
 
     public void EnterLobby()
     {
-        if (SceneManager.GetActiveScene().name == GameConsts.SceneName.LobbyScene)
-        {
-            Debug.Assert(false, "Already in lobby");
-        }
-        else
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameConsts.SceneName.LobbyScene));
-
-            SceneManager.LoadScene(GameConsts.SceneName.LobbyScene, LoadSceneMode.Single);
-
-            curScene = SceneManager.GetSceneByName(GameConsts.SceneName.LobbyScene);
-
-            //GameManager.instance.SoundController.PlayAudioSource(GameConsts.AudioSourceName.LobbyBGM, true);
-        }
-            
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameConsts.SceneName.LobbyScene));
+        SceneManager.LoadScene(GameConsts.SceneName.LobbyScene, LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(GameConsts.SceneName.Level1Scene);
+        GameManager.instance.SoundController.PlayInGameBGM(false);
     }
 
-    public void EnterLevel1()
+    public void EnterInGame()
     {
-        if (SceneManager.GetActiveScene().name == GameConsts.SceneName.Level1Scene)
-        {
-            Debug.Assert(false, "Already in Level1");
-        }
-        else
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameConsts.SceneName.Level1Scene));
-
-            SceneManager.LoadScene(GameConsts.SceneName.LobbyScene, LoadSceneMode.Additive);
-
-            curScene = SceneManager.GetSceneByName(GameConsts.SceneName.Level1Scene);
-
-            //GameManager.instance.SoundController.PlayAudioSource(GameConsts.AudioSourceName.Level1BGM, true);
-        }
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameConsts.SceneName.LobbyScene));
+        SceneManager.LoadScene(GameConsts.SceneName.Level1Scene, LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(GameConsts.SceneName.LobbyScene);
+        GameManager.instance.SoundController.PlayInGameBGM(true);
     }
 
 }

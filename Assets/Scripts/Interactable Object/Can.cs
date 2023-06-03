@@ -29,6 +29,7 @@ public class Can : Trash
 
     public override void OnActiveInteraction()
     {
+        isCleared= true;
         isCrushed = true;
         ring.SetParent(ring.parent.parent);
         meshFilter.mesh = crushed;
