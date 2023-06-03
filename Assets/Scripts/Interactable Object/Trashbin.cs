@@ -21,7 +21,7 @@ public class Trashbin : InteractableObject
     {
 
 
-        if (Vector3.Distance(Camera.main.gameObject.transform.position, transform.position + Vector3.up * 1.5f) <= 3)
+        if (Vector3.Distance(Camera.main.gameObject.transform.position, transform.position + Vector3.up * 1.5f) <= 1f)
         {
             if (!isPlayerAttached)
             {

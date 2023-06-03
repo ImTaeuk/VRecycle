@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
+using static UnityEditor.PlayerSettings;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         ui.SetActive(true);
         ui.transform.SetParent(playerTransform);
         ui.transform.localPosition = new Vector3(0, -0.2f, 0.5f);
+        ui.transform.localRotation = Quaternion.Euler(0, 0, 0);
         ui.transform.SetParent(null);
         uiTimer = 3.0f;
     }
@@ -73,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        dot.gameObject.SetActive(ui.activeSelf);
+
         if (leftController.IsTriggerActivated && rightController.IsTriggerActivated && !ui.activeSelf)
         {
             SetActiveUIPanel();

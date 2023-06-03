@@ -31,6 +31,7 @@ public class Sink : InteractableObject
                 isPlayerAttached = true;
                 sound.loop = true;
                 sound.Play();
+                ps.Play();
             }
         }
         else
@@ -39,14 +40,12 @@ public class Sink : InteractableObject
             {
                 isPlayerAttached = false;
                 sound.Stop();
+                ps.Stop();
             }
         }
     }
 
     public override void OnActiveInteraction()
     {
-        if (isPlayerAttached)
-            ps.Play();
-        else ps.Stop();
     }
 }
